@@ -1,0 +1,49 @@
+{
+  "mijnMuntenCollectie": [
+    {
+      "id": 1,
+      "materiaal": 3,
+      "jaartal": 1970,
+      "valuta": "Gulden",
+      "waarde": 0.25,
+      "afbeeldingen": {
+        "voorkant": "voorkant001.png",
+        "achterkant": "achterkant001.png"
+      }
+    },
+    {
+      "id": 2,
+      "materiaal": 2,
+      "jaartal": 2000,
+      "valuta": "Euro",
+      "waarde": 2,
+      "afbeeldingen": {
+        "voorkant": "voorkant002.png",
+        "achterkant": "achterkant002.png"
+      }
+    },
+    {
+      "id": 3,
+      "materiaal": 1,
+      "jaartal": 1989,
+      "valuta": "Yen",
+
+      "waarde": 200,
+      "afbeeldingen": {
+        "voorkant": "voorkant003.png",
+        "achterkant": "achterkant003.png"
+      }
+    },
+    {
+      "id": 4,
+      "materiaal": 2,
+      "jaartal": 1999,
+      "valuta": "Yen",
+      "waarde": 400,
+      "afbeeldingen": {
+        "voorkant": "voorkant004.png",
+        "achterkant": "achterkant004.png"
+      }
+    }
+  ]
+}
