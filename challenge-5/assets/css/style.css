@@ -5,6 +5,14 @@
     left: 0px;
 }
 
+.car2 {
+    display: inline-block;
+    width: 70px;
+    position: absolute;
+    right: 0px;
+    transform: rotate(180deg);
+}
+
 .tree {
     display: inline-block;
     width: 40px;
