@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Opdracht 2 - myFunctionX()</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            background-color: #cccccc;
+        }
+
+        .style1 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #uitkomst {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <span class="style1">Hier staat de koptekst van de pagina.</span><br />
+    <br />
+    Dit is de pagina waarmee je de challenge gaat maken. <br />
+    Zoals je ziet is deze pagina niet veel bijzonders.<br />
+    Gewoon een pagina met wat tekst er in.<br />
+    <br />
+    Challenge 2 - Module 6 - JavaScript 2 Hier staat nog een regel.<br />
+    <br />
+    Met deze links kun je straks de verschillende functies van jouw JavaScript
+    uitvoeren:
+    <br />
+    <br />
+    <a href="#" onclick="myFunction1()">link 1</a>
+    <a href="#" onclick="myFunction2()">link 2</a>
+    <a href="#" onclick="myFunction3()">link 3</a>
+    <a href="#" onclick="myFunction4()">link 4</a>
+    <a href="#" onclick="myFunction5()">link 5</a>
+    <a href="#" onclick="myFunction6()">link 6</a>
+    <a href="#" onclick="myFunction7()">link 7</a>
+    <a href="#" onclick="myFunction8()">link 8</a>
+    <br /><br />
+
+    <div id="uitkomst">
+        hier kun je via de javaScript functies die uitgevoerd worden via de
+        knoppen straks een andere tekst neer zetten..
+    </div>
+
+    <br />
+    link 1 : pas de koptekst van de pagina aan<br />
+    link 2 : pas de tekst die IN de div tag (met het id 'uitkomst') staat aan<br />
+    link 3 : voeg tekst toe aan deze div tag (dus laat de bestaande tekst
+    staan)<br />
+    link 4 : plaats via een 'prompt' de door de gebruiker ingevoerde tekst IN de
+    div tag<br />
+    link 5 : hoeveel &lta&gt tags zijn er op de pagina aanwezig? zet de uitkomst
+    IN de div tag...<br />
+    link 6 : pas de tekst van de derde link in het document aan<br />
+    link 7 : pas de background-color van de div tag aan, als de kleur wit is
+    wordt die rood, en als die rood is wordt die weer wit<br />
+    link 8 : voeg een nieuw &ltdiv&gt element toe aan je pagina en zet daarin
+    een tekst naar keuze<br />
+
+    <script>
+        function myFunction1() {
+            const koptekst = document.querySelector(".style1")
+            koptekst.style.color = "red";
+        }
+
+        const uitkomst = document.getElementById("uitkomst")
+
+        function myFunction2() {
+            uitkomst.innerHTML = "Mijn Eerste teskst, "
+        }
+
+        function myFunction3() {
+            uitkomst.innerHTML += "Mijn tweede teskst, "
+        }
+
+        function myFunction4() {
+            let newPrompt = prompt("Voer een stukje tekst")
+            uitkomst.innerHTML += newPrompt
+        }
+
+        function myFunction5() {
+            const aTag = document.getElementsByTagName("a").length
+            uitkomst.innerHTML += aTag
+        }
+
+        function myFunction6() {
+            const aTag = document.getElementsByTagName("a")[2]
+            aTag.innerHTML = `<a href="#" onclick="myFunction3()">Verandered</a>`
+        }
+
+        function myFunction7() {
+            if(uitkomst.style.backgroundColor == "white"){
+                uitkomst.style.backgroundColor = "black"
+            }else{
+                uitkomst.style.backgroundColor = "white"
+            }
+        }
+        // myFunction7()
+        function myFunction8() {
+            uitkomst.innerHTML += "<h1>Nieuw HTML Tag</h1>"
+        }
+    </script>
+</body>
+
+</html>
