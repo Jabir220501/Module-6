@@ -1,48 +1,47 @@
 {
-  "mijnMuntenCollectie": [
+  "mijnFilmCollectie": [
     {
       "id": 1,
-      "materiaal": 3,
-      "jaartal": 1970,
-      "valuta": "Gulden",
-      "waarde": 0.25,
+      "titel": "The Grey Man",
+      "beschrijving": "Een tot moord veroordeelde gevangene wordt gerekruteerd als huurmoordenaar voor de CIA. Wanneer hij tijdens een missie in bezit komt van compromitterende informatie over de organisatie, wordt hij zelf het doelwit.",
+      "jaartal": 2022,
+      "acteur": "Ryan Gosling",
       "afbeeldingen": {
-        "voorkant": "voorkant001.png",
-        "achterkant": "achterkant001.png"
+        "poster": "https://image.tmdb.org/t/p/original//5Eom3JsXgQlCj6QIsGCwXkX7wyH.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/original//2u1YBNBlSwvBReyvI7i5z5ykQXP.jpg"
       }
     },
     {
       "id": 2,
-      "materiaal": 2,
-      "jaartal": 2000,
-      "valuta": "Euro",
-      "waarde": 2,
+      "titel": "John Wick",
+      "beschrijving": "De dodelijke instincten van een ex-huurmoordenaar, genaamd John Wick, worden opnieuw aangewakkerd wanneer een crimineel zijn Ford Mustang steelt en daarbij de hond doodt die door zijn overleden vrouw aan hem is overgedragen. Hij volgt de man naar New York, waarbij een maffiabaas en tevens de vader van de crimineel, opdracht geeft John Wick uit de weg te ruimen",
+      "jaartal": 2014,
+      "acteur": "Keanu Reeves",
       "afbeeldingen": {
-        "voorkant": "voorkant002.png",
-        "achterkant": "achterkant002.png"
+        "poster": "https://image.tmdb.org/t/p/original//5Eom3JsXgQlCj6QIsGCwXkX7wyH.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/original//2u1YBNBlSwvBReyvI7i5z5ykQXP.jpg"
       }
     },
     {
       "id": 3,
-      "materiaal": 1,
-      "jaartal": 1989,
-      "valuta": "Yen",
-
-      "waarde": 200,
+      "titel": "Godzilla vs. Kong",
+      "beschrijving": "In een nieuwe wereld leven mensen en titanen samen. Maar er is een geheime factie die wil dat de titanen oorlog met elkaar voeren, een strijd die al het leven op aarde zou kunnen bedreigen. Ondertussen trekt een vreemde seismische activiteit op Skull Island de aandacht van zowel Godzilla als Kong. Een oorlog lijkt onafwendbaar.",
+      "jaartal": 2021,
+      "acteur": "Alexander Skarsgård",
       "afbeeldingen": {
-        "voorkant": "voorkant003.png",
-        "achterkant": "achterkant003.png"
+        "poster": "https://image.tmdb.org/t/p/original//pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/original//inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg"
       }
     },
     {
       "id": 4,
-      "materiaal": 2,
-      "jaartal": 1999,
-      "valuta": "Yen",
-      "waarde": 400,
+      "titel": "Black Adam",
+      "beschrijving": "Duizenden jaren geleden kreeg een man magische krachten toebedeeld van tovenaar Shazam. Nadat de man zijn gaven voor kwaadaardige doeleinden gebruikte, werd hij eeuwenlang gevangen gezet. Nu staat hij op het punt eindelijk vrij te komen.",
+      "jaartal": 2022,
+      "acteur": "Dwayne Johnson",
       "afbeeldingen": {
-        "voorkant": "voorkant004.png",
-        "achterkant": "achterkant004.png"
+        "poster": "https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+        "backdrop": "https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg"
       }
     }
   ]

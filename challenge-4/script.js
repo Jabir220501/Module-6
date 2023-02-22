@@ -1,43 +1,35 @@
 const container = document.getElementById("container");
 const sprite = [
-  [0, 0, 1, 1, 1, 1, 0, 0],
-  [0, 1, 1, 1, 1, 1, 1, 0],
   [1, 1, 1, 1, 1, 1, 1, 1],
   [1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 2, 2, 2, 2, 2, 2, 2],
+  [1, 0, 0, 0, 0, 0, 0, 0],
   [1, 1, 1, 1, 1, 1, 1, 1],
-  [1, 1, 0, 0, 0, 0, 1, 1],
-  [0, 1, 0, 0, 0, 0, 1, 0],
-  [0, 1, 0, 0, 0, 0, 1, 0]
+  [1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 2, 2, 2, 2, 2, 2, 2],
+  [1, 0, 0, 0, 0, 0, 0, 0],
+  [1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
-console.table(sprite[1])
+console.table(sprite);
 
 const colors = {
   0: "grey",
-  1: "black"
+  1: "#111",
+  2: "#4f4f4f",
 };
 
-console.table(colors)
+console.table(colors);
 
-const height = window.innerHeight * 1.7;
-
-for (let i = 0; i < height; i++) {
-  const block = document.createElement("div");
-  block.className = `block i${i}`;
-  container.appendChild(block);
-}
-
-// Calculate the starting row and column for the sprite
-let startRow = 690
-let startCol = 699
-
-// Loop through the sprite array and create the grid layout
 for (let i = 0; i < sprite.length; i++) {
-  startRow = startRow + 1;
-  const row = document.querySelector(`.i${startRow}`)
-
-  if(colors[0] == "grey"){
-    row.style.background= "grey"
+  const div = document.createElement("div");
+  container.appendChild(div);
+  for (let j = 0; j < sprite[i].length; j++) {
+    const block = document.createElement("div");
+    block.className = `block r${i}`;
+    div.appendChild(block);
+    block.style.backgroundColor = colors[sprite[i][j]];
   }
-
 }
+

@@ -20,17 +20,3 @@ body {
     vertical-align: top;
     float: left;
 }
-
-
-.filled {
-    background-color: black;
-}
-
-.row {
-    position: absolute;
-    height: 10px;
-}
-
-/* .i690, .i699 {
-    background-color: black;
-} */

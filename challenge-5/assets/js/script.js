@@ -33,29 +33,41 @@ document.body.onkeydown = (event) => {
     case 40: //down
       car.style.transform = "rotate(90deg)";
       car.style.top = parseInt(car.style.top) + 5 + "px";
-      if (crash() == true) {
+      if (crash(car) == true) {
         car.style.top = parseInt(car.style.top) + 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 37: // left
       car.style.transform = "rotate(180deg)";
       car.style.left = parseInt(car.style.left) - 5 + "px";
-      if (crash() == true) {
-        car.style.top = parseInt(car.style.left) + 5 + "px";
+      if (crash(car) == true) {
+        car.style.left = parseInt(car.style.left) + 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 39: // right
       car.style.transform = "rotate(0deg)";
       car.style.left = parseInt(car.style.left) + 5 + "px";
-      if (crash() == true) {
+      if (crash(car) == true) {
         car.style.top = parseInt(car.style.left) - 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 38: // top
       car.style.transform = "rotate(-90deg)";
       car.style.top = parseInt(car.style.top) - 5 + "px";
-      if (crash() == true) {
+      if (crash(car) == true) {
         car.style.top = parseInt(car.style.top) - 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
 
@@ -63,115 +75,126 @@ document.body.onkeydown = (event) => {
     case 83: //Down
       car2.style.transform = "rotate(90deg)";
       car2.style.top = parseInt(car2.style.top) + 5 + "px";
-      if (crash2() == true) {
+      if (crash(car2) == true) {
         car2.style.top = parseInt(car2.style.top) + 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 65: // Left
       car2.style.transform = "rotate(180deg)";
       car2.style.right = parseInt(car2.style.right) + 5 + "px";
-      if (crash2() == true) {
+      if (crash(car2) == true) {
         car2.style.top = parseInt(car2.style.right) + 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 68: // Right
       car2.style.transform = "rotate(0deg)";
       car2.style.right = parseInt(car2.style.right) - 5 + "px";
-      if (crash2() == true) {
+      if (crash(car2) == true) {
         car2.style.top = parseInt(car2.style.right) - 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
     case 87: // Top
       car2.style.transform = "rotate(-90deg)";
       car2.style.top = parseInt(car2.style.top) - 5 + "px";
-      if (crash2() == true) {
+      if (crash() == true) {
         car2.style.top = parseInt(car2.style.top) - 5 + "px";
+      }
+      if (carCrash() == true) {
+        alert("BOOOMM!!!");
       }
       break;
   }
 };
 // If car 1 crashes then add +1 to crashCounter and spawn somewhere else
-function crash() {
+function crash(cars) {
   trees = document.getElementsByClassName("tree");
   let overlap = false;
   for (i = 0; i < trees.length; i++) {
     overlap = !(
-      car.getBoundingClientRect().right <
+      cars.getBoundingClientRect().right <
         trees[i].getBoundingClientRect().left ||
-      car.getBoundingClientRect().left >
+      cars.getBoundingClientRect().left >
         trees[i].getBoundingClientRect().right ||
-      car.getBoundingClientRect().bottom <
+      cars.getBoundingClientRect().bottom <
         trees[i].getBoundingClientRect().top ||
-      car.getBoundingClientRect().top > trees[i].getBoundingClientRect().bottom
+      cars.getBoundingClientRect().top > trees[i].getBoundingClientRect().bottom
     );
     if (overlap) {
-      crashCounter += 1;
-      crashCarCounter += 1;
+      if (cars == car) {
+        crashCounter += 1;
+        crashCarCounter += 1;
+        let crashedCar = [
+          "assets/img/car.png",
+          "assets/img/Daco_652849.png",
+          "assets/img/car.png",
+          "assets/img/Daco_652849.png",
+          "assets/img/car.png",
+        ];
 
-      let crashedCar = [
-        "assets/img/car.png",
-        "assets/img/Daco_652849.png",
-        "assets/img/car.png",
-        "assets/img/Daco_652849.png",
-        "assets/img/car.png",
-      ];
-
-      for (i = 0; i < crashedCar.length; i++) {
-        if (crashCarCounter > crashedCar.length - 1) {
-          crashCarCounter = 0;
-          crashCarCounter += 1;
+        for (i = 0; i < crashedCar.length; i++) {
+          if (crashCarCounter > crashedCar.length - 1) {
+            crashCarCounter = 0;
+            crashCarCounter += 1;
+          }
+          cars.setAttribute("src", crashedCar[crashCarCounter]);
         }
-        car.setAttribute("src", crashedCar[crashCarCounter]);
-      }
-      crashCounterOutput();
-      return true;
-    }
-  }
-  return overlap;
-}
+        crashCounterOutput();
+        return true;
+      } else {
+        crashCounter2 += 1;
+        crashCarCounter2 += 1;
 
-// If car 2 crashes then add +1 to crashCounter and spawn somewhere else
-function crash2() {
-  trees = document.getElementsByClassName("tree");
-  let overlap = false;
-  for (i = 0; i < trees.length; i++) {
-    overlap = !(
-      car2.getBoundingClientRect().right <
-        trees[i].getBoundingClientRect().left ||
-      car2.getBoundingClientRect().left >
-        trees[i].getBoundingClientRect().right ||
-      car2.getBoundingClientRect().bottom <
-        trees[i].getBoundingClientRect().top ||
-      car2.getBoundingClientRect().top > trees[i].getBoundingClientRect().bottom
-    );
-    if (overlap) {
-      crashCounter2 += 1;
-      crashCarCounter2 += 1;
+        let crashedCar2 = [
+          "assets/img/car.png",
+          "assets/img/Daco_652849.png",
+          "assets/img/car.png",
+          "assets/img/Daco_652849.png",
+          "assets/img/car.png",
+        ];
 
-      let crashedCar2 = [
-        "assets/img/car.png",
-        "assets/img/Daco_652849.png",
-        "assets/img/car.png",
-        "assets/img/Daco_652849.png",
-        "assets/img/car.png",
-      ];
-
-      for (i = 0; i < crashedCar2.length; i++) {
-        if (crashCarCounter2 > crashedCar2.length - 1) {
-          crashCarCounter2 = 0;
-          crashCarCounter2 += 1;
+        for (i = 0; i < crashedCar2.length; i++) {
+          if (crashCarCounter2 > crashedCar2.length - 1) {
+            crashCarCounter2 = 0;
+            crashCarCounter2 += 1;
+          }
+          car2.setAttribute("src", crashedCar2[crashCarCounter2]);
         }
-        car2.setAttribute("src", crashedCar2[crashCarCounter2]);
+        crashCounterOutput2();
+        return true;
       }
-      crashCounterOutput2();
-      return true;
     }
   }
   return overlap;
 }
 
 function carCrash() {
-  
+  let overlap = false;
+  for (i = 0; i < 2; i++) {
+    overlap = !(
+      car.getBoundingClientRect().right < car2.getBoundingClientRect().left ||
+      car.getBoundingClientRect().left > car2.getBoundingClientRect().right ||
+      car.getBoundingClientRect().bottom < car2.getBoundingClientRect().top ||
+      car.getBoundingClientRect().top > car2.getBoundingClientRect().bottom
+    );
+
+    if (overlap) {
+      car.style.top = 0;
+      car.style.left = 0;
+      car2.style.top = 0;
+      car2.style.right = 0;
+      return true;
+    }
+  }
+  return overlap;
 }
 
 const crashCounterOutput = () => {
